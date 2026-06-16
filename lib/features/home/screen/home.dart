@@ -11,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String _searchQuery = '';
+
   final List<Map<String, dynamic>> notes = [
     {
       'id': '1',
@@ -77,6 +79,13 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    final filteredNotes = notes.where((note) {
+      final title = note['title'].toString().toLowerCase();
+      final content = note['content'].toString().toLowerCase();
+      final query = _searchQuery.toLowerCase();
+      return title.contains(query) || content.contains(query);
+    }).toList();
+
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
@@ -108,6 +117,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     horizontal: AppSizes.normal,
                   ),
                   child: SearchBar(
+                    onChanged: (value) {
+                      setState(() {
+                        _searchQuery = value;
+                      });
+                    },
                     padding: WidgetStateProperty.all(
                       const EdgeInsets.only(
                         left: AppSizes.normal,
@@ -171,19 +185,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: AppSizes.small,
                 bottom: AppSizes.large,
               ),
-              itemCount: notes.length, // Replace with your actual item count
+              itemCount: filteredNotes.length,
               separatorBuilder: (context, index) =>
                   const SizedBox(height: AppSizes.normal),
               itemBuilder: (context, index) {
                 return NoteItem(
-                  id: notes[index]['id'],
-                  title: notes[index]['title'],
-                  content: notes[index]['content'],
-                  createdAt: notes[index]['createdAt'],
-                  updatedAt: notes[index]['updatedAt'],
-                  onTap: () {
-                    // Handle note tap
-                  },
+                  id: filteredNotes[index]['id'],
+                  title: filteredNotes[index]['title'],
+                  content: filteredNotes[index]['content'],
+                  createdAt: filteredNotes[index]['createdAt'],
+                  updatedAt: filteredNotes[index]['updatedAt'],
                 );
               },
             ),

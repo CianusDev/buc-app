@@ -8,7 +8,6 @@ class NoteItem extends StatelessWidget {
   final String content;
   final DateTime createdAt;
   final DateTime updatedAt;
-  final VoidCallback? onTap;
 
   const NoteItem({
     super.key,
@@ -17,7 +16,6 @@ class NoteItem extends StatelessWidget {
     required this.content,
     required this.createdAt,
     required this.updatedAt,
-    this.onTap,
   });
 
   @override
