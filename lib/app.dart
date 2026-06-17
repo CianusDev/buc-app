@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light,
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeScreen(title: 'Buc.'),
+        '/': (context) => const HomeScreen(title: 'Buc'),
         '/note-detail': (context) => const NoteDetail(),
       },
     );
