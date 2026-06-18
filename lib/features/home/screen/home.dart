@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuto_flutter/core/constants/app_colors.dart';
-import 'package:tuto_flutter/core/constants/app_sizes.dart';
-import 'package:tuto_flutter/providers/note_provider.dart';
-import 'package:tuto_flutter/shared/widgets/note_card.dart';
+import 'package:buc/core/constants/app_colors.dart';
+import 'package:buc/core/constants/app_sizes.dart';
+import 'package:buc/providers/note_provider.dart';
+import 'package:buc/shared/widgets/note_card.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;

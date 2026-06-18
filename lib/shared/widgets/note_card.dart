@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_flutter/core/constants/app_colors.dart';
-import 'package:tuto_flutter/core/constants/app_sizes.dart';
+import 'package:buc/core/constants/app_colors.dart';
+import 'package:buc/core/constants/app_sizes.dart';
 
 class NoteItem extends StatelessWidget {
   final String id;

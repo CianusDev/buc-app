@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_flutter/core/theme/app_theme.dart';
-import 'package:tuto_flutter/features/home/screen/home.dart';
-import 'package:tuto_flutter/features/note-detail/screen/note_detail.dart';
+import 'package:buc/core/theme/app_theme.dart';
+import 'package:buc/features/home/screen/home.dart';
+import 'package:buc/features/note-detail/screen/note_detail.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

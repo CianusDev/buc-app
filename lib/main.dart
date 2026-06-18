@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuto_flutter/providers/note_provider.dart';
+import 'package:buc/providers/note_provider.dart';
 import 'app.dart';
 
 void main() {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuto_flutter/models/note.dart';
-import 'package:tuto_flutter/providers/note_provider.dart';
+import 'package:buc/models/note.dart';
+import 'package:buc/providers/note_provider.dart';
 
 class NoteDetail extends StatefulWidget {
   const NoteDetail({super.key});
